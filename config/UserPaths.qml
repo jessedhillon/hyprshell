@@ -4,8 +4,8 @@ import qs.utils
 JsonObject {
     property string wallpaperDir: `${Paths.pictures}/Wallpapers`
     property string lyricsDir: `${Paths.home}/Music/lyrics/`
-    property string sessionGif: "root:/assets/kurukuru.gif"
-    property string mediaGif: "root:/assets/bongocat.gif"
-    property string noNotifsPic: "root:/assets/dino.png"
-    property string lockNoNotifsPic: "root:/assets/dino.png"
+    property string sessionGif: "" // TODO: customizable session decoration
+    property string mediaGif: "" // TODO: customizable media player decoration
+    property string noNotifsPic: "" // TODO: customizable empty-state illustration
+    property string lockNoNotifsPic: "" // TODO: customizable lock screen illustration
 }

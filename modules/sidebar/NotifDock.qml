@@ -94,18 +94,7 @@ Item {
             sourceComponent: ColumnLayout {
                 spacing: Appearance.spacing.large
 
-                Image {
-                    asynchronous: true
-                    source: Paths.absolutePath(Config.paths.noNotifsPic)
-                    fillMode: Image.PreserveAspectFit
-                    sourceSize.width: clipRect.width * 0.8
-
-                    layer.enabled: true
-                    layer.effect: Colouriser {
-                        colorizationColor: Colours.palette.m3outlineVariant
-                        brightness: 1
-                    }
-                }
+                // TODO: customizable empty-state illustration slot
 
                 StyledText {
                     Layout.alignment: Qt.AlignHCenter
