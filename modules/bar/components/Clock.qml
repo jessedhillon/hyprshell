@@ -31,7 +31,7 @@ StyledRect {
             visible: active
 
             sourceComponent: MaterialIcon {
-                text: "calendar_month"
+                text: "schedule"
                 color: root.colour
             }
         }
@@ -62,9 +62,21 @@ StyledRect {
             anchors.horizontalCenter: parent.horizontalCenter
 
             horizontalAlignment: StyledText.AlignHCenter
-            text: Time.format(Config.services.useTwelveHourClock ? "hh\nmm\nA" : "hh\nmm")
+            text: Time.format("HH")
             font.pointSize: Appearance.font.size.smaller
             font.family: Appearance.font.family.mono
+            font.weight: 700
+            color: root.colour
+        }
+
+        StyledText {
+            anchors.horizontalCenter: parent.horizontalCenter
+
+            horizontalAlignment: StyledText.AlignHCenter
+            text: Time.format("mm")
+            font.pointSize: Appearance.font.size.smaller
+            font.family: Appearance.font.family.mono
+            font.weight: 300
             color: root.colour
         }
     }
