@@ -60,3 +60,4 @@ qml_module(caelestia
 add_subdirectory(Internal)
 add_subdirectory(Models)
 add_subdirectory(Services)
+add_subdirectory(Terminal)

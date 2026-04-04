@@ -159,6 +159,14 @@ ColumnLayout {
                 }
             }
             DelegateChoice {
+                roleValue: "terminal"
+                delegate: WrappedLoader {
+                    Layout.fillHeight: enabled
+                    visible: !root.fullscreen
+                    sourceComponent: TerminalWidget {}
+                }
+            }
+            DelegateChoice {
                 roleValue: "clock"
                 delegate: WrappedLoader {
                     visible: !root.fullscreen

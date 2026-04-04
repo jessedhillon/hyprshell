@@ -29,6 +29,7 @@
   ninja,
   pkg-config,
   caelestia-cli,
+  libghostty-vt,
   debug ? false,
   withCli ? false,
   extraRuntimeDeps ? [],
@@ -94,13 +95,15 @@
     };
 
     nativeBuildInputs = [cmake ninja pkg-config];
-    buildInputs = [qt6.qtbase qt6.qtdeclarative libqalculate pipewire aubio libcava fftw];
+    buildInputs = [qt6.qtbase qt6.qtdeclarative libqalculate pipewire aubio libcava fftw libghostty-vt];
 
     dontWrapQtApps = true;
     cmakeFlags =
       [
         (lib.cmakeFeature "ENABLE_MODULES" "plugin")
         (lib.cmakeFeature "INSTALL_QMLDIR" qt6.qtbase.qtQmlPrefix)
+        (lib.cmakeFeature "GHOSTTY_VT_INCLUDE_DIR" "${libghostty-vt}/include")
+        (lib.cmakeFeature "GHOSTTY_VT_LIB_DIR" "${libghostty-vt}/lib")
       ]
       ++ cmakeVersionFlags;
   };
