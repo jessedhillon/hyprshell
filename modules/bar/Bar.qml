@@ -152,6 +152,13 @@ ColumnLayout {
                 }
             }
             DelegateChoice {
+                roleValue: "date"
+                delegate: WrappedLoader {
+                    visible: !root.fullscreen
+                    sourceComponent: DateWidget {}
+                }
+            }
+            DelegateChoice {
                 roleValue: "clock"
                 delegate: WrappedLoader {
                     visible: !root.fullscreen
