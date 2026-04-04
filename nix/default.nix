@@ -95,15 +95,13 @@
     };
 
     nativeBuildInputs = [cmake ninja pkg-config];
-    buildInputs = [qt6.qtbase qt6.qtdeclarative libqalculate pipewire aubio libcava fftw libghostty-vt];
+    buildInputs = [qt6.qtbase qt6.qtdeclarative libqalculate pipewire aubio libcava fftw libghostty-vt.dev];
 
     dontWrapQtApps = true;
     cmakeFlags =
       [
         (lib.cmakeFeature "ENABLE_MODULES" "plugin")
         (lib.cmakeFeature "INSTALL_QMLDIR" qt6.qtbase.qtQmlPrefix)
-        (lib.cmakeFeature "GHOSTTY_VT_INCLUDE_DIR" "${libghostty-vt}/include")
-        (lib.cmakeFeature "GHOSTTY_VT_LIB_DIR" "${libghostty-vt}/lib")
       ]
       ++ cmakeVersionFlags;
   };
@@ -114,7 +112,7 @@ in
     src = ./..;
 
     nativeBuildInputs = [cmake ninja makeWrapper qt6.wrapQtAppsHook];
-    buildInputs = [quickshell extras plugin xkeyboard-config qt6.qtbase];
+    buildInputs = [quickshell extras plugin xkeyboard-config qt6.qtbase libghostty-vt];
     propagatedBuildInputs = runtimeDeps;
 
     cmakeFlags =
