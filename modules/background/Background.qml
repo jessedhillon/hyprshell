@@ -30,6 +30,11 @@ Loader {
             anchors.bottom: true
             anchors.left: true
             anchors.right: true
+            // Expand surface 1px on all edges to cover fractional scaling gap
+            WlrLayershell.margins.top: -1
+            WlrLayershell.margins.bottom: -1
+            WlrLayershell.margins.left: -1
+            WlrLayershell.margins.right: -1
 
             Item {
                 id: behindClock

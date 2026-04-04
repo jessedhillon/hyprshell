@@ -19,8 +19,11 @@ Shape {
     required property real borderRounding
 
     anchors.fill: parent
-    anchors.margins: root.borderThickness
-    anchors.leftMargin: bar.implicitWidth
+    // -1 to compensate for surface overscan from fractional scaling fix
+    anchors.topMargin: root.borderThickness - 1
+    anchors.bottomMargin: root.borderThickness - 1
+    anchors.leftMargin: bar.implicitWidth - 1
+    anchors.rightMargin: root.borderThickness - 1
     preferredRendererType: Shape.CurveRenderer
 
     Osd.Background {
