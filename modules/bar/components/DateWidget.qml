@@ -34,7 +34,7 @@ StyledRect {
             anchors.horizontalCenter: parent.horizontalCenter
 
             horizontalAlignment: StyledText.AlignHCenter
-            text: Time.format("MMM").toUpperCase()
+            text: Time.format("MM")
             font.pointSize: Appearance.font.size.smaller
             font.family: Appearance.font.family.mono
             font.weight: 700
